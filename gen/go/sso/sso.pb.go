@@ -10,7 +10,6 @@ import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	sync "sync"
 	unsafe "unsafe"
 )
 
@@ -22,11 +21,11 @@ const (
 )
 
 type RegisterRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state               protoimpl.MessageState `protogen:"opaque.v1"`
+	xxx_hidden_Email    string                 `protobuf:"bytes,1,opt,name=email,proto3"`
+	xxx_hidden_Password string                 `protobuf:"bytes,2,opt,name=password,proto3"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *RegisterRequest) Reset() {
@@ -54,30 +53,49 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
-func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{0}
-}
-
 func (x *RegisterRequest) GetEmail() string {
 	if x != nil {
-		return x.Email
+		return x.xxx_hidden_Email
 	}
 	return ""
 }
 
 func (x *RegisterRequest) GetPassword() string {
 	if x != nil {
-		return x.Password
+		return x.xxx_hidden_Password
 	}
 	return ""
 }
 
+func (x *RegisterRequest) SetEmail(v string) {
+	x.xxx_hidden_Email = v
+}
+
+func (x *RegisterRequest) SetPassword(v string) {
+	x.xxx_hidden_Password = v
+}
+
+type RegisterRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	Email    string
+	Password string
+}
+
+func (b0 RegisterRequest_builder) Build() *RegisterRequest {
+	m0 := &RegisterRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.xxx_hidden_Email = b.Email
+	x.xxx_hidden_Password = b.Password
+	return m0
+}
+
 type RegisterResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state             protoimpl.MessageState `protogen:"opaque.v1"`
+	xxx_hidden_UserId int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *RegisterResponse) Reset() {
@@ -105,24 +123,37 @@ func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RegisterResponse.ProtoReflect.Descriptor instead.
-func (*RegisterResponse) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{1}
-}
-
 func (x *RegisterResponse) GetUserId() int64 {
 	if x != nil {
-		return x.UserId
+		return x.xxx_hidden_UserId
 	}
 	return 0
 }
 
+func (x *RegisterResponse) SetUserId(v int64) {
+	x.xxx_hidden_UserId = v
+}
+
+type RegisterResponse_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	UserId int64
+}
+
+func (b0 RegisterResponse_builder) Build() *RegisterResponse {
+	m0 := &RegisterResponse{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.xxx_hidden_UserId = b.UserId
+	return m0
+}
+
 type LoginRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state               protoimpl.MessageState `protogen:"opaque.v1"`
+	xxx_hidden_Email    string                 `protobuf:"bytes,1,opt,name=email,proto3"`
+	xxx_hidden_Password string                 `protobuf:"bytes,2,opt,name=password,proto3"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *LoginRequest) Reset() {
@@ -150,30 +181,49 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
-func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{2}
-}
-
 func (x *LoginRequest) GetEmail() string {
 	if x != nil {
-		return x.Email
+		return x.xxx_hidden_Email
 	}
 	return ""
 }
 
 func (x *LoginRequest) GetPassword() string {
 	if x != nil {
-		return x.Password
+		return x.xxx_hidden_Password
 	}
 	return ""
 }
 
+func (x *LoginRequest) SetEmail(v string) {
+	x.xxx_hidden_Email = v
+}
+
+func (x *LoginRequest) SetPassword(v string) {
+	x.xxx_hidden_Password = v
+}
+
+type LoginRequest_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	Email    string
+	Password string
+}
+
+func (b0 LoginRequest_builder) Build() *LoginRequest {
+	m0 := &LoginRequest{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.xxx_hidden_Email = b.Email
+	x.xxx_hidden_Password = b.Password
+	return m0
+}
+
 type LoginResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"opaque.v1"`
+	xxx_hidden_Token string                 `protobuf:"bytes,1,opt,name=token,proto3"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *LoginResponse) Reset() {
@@ -201,16 +251,29 @@ func (x *LoginResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use LoginResponse.ProtoReflect.Descriptor instead.
-func (*LoginResponse) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{3}
-}
-
 func (x *LoginResponse) GetToken() string {
 	if x != nil {
-		return x.Token
+		return x.xxx_hidden_Token
 	}
 	return ""
+}
+
+func (x *LoginResponse) SetToken(v string) {
+	x.xxx_hidden_Token = v
+}
+
+type LoginResponse_builder struct {
+	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
+
+	Token string
+}
+
+func (b0 LoginResponse_builder) Build() *LoginResponse {
+	m0 := &LoginResponse{}
+	b, x := &b0, m0
+	_, _ = b, x
+	x.xxx_hidden_Token = b.Token
+	return m0
 }
 
 var File_sso_sso_proto protoreflect.FileDescriptor
@@ -231,18 +294,6 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponseB Z\x1egithub.com/kvllad/ecom-sso;ssob\x06proto3"
-
-var (
-	file_sso_sso_proto_rawDescOnce sync.Once
-	file_sso_sso_proto_rawDescData []byte
-)
-
-func file_sso_sso_proto_rawDescGZIP() []byte {
-	file_sso_sso_proto_rawDescOnce.Do(func() {
-		file_sso_sso_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)))
-	})
-	return file_sso_sso_proto_rawDescData
-}
 
 var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_sso_sso_proto_goTypes = []any{
