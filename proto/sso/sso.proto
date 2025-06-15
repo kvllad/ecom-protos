@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "github.com/kvllad/ecom-sso";
+option go_package = "github.com/kvllad/ecom-sso;sso";
 
 service Auth {
   rpc Register (RegisterRequest) returns (RegisterResponse);

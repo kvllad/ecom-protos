@@ -4,7 +4,7 @@
 // - protoc             v5.29.3
 // source: sso/sso.proto
 
-package ecom_sso
+package sso
 
 import (
 	context "context"
